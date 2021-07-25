@@ -68,27 +68,26 @@ if(!isset($_SESSION['access_token']))
   <link href = "style.css" rel="stylesheet">
   <meta content='width=device-width, initial-scale=1, maximum-scale=1' name='viewport'/>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
- 
-  
  </head>
- <body>
+ <body class="body">
   <div class="container">
-   <br />
    <div className = "Header">
-                <center>
-                  <div class = "Parul">
-                      Parul &reg;<br/>
-                   </div>
-                  <div class = "University">
-                     University
-                  </div>    
-               </center>
-               </div>
-   <div class="panel panel-default">
+            <div class = "Parul">
+               Parul &reg;<br/>
+            </div>
+            <div class = "University">
+               University
+            </div>   
+      <img src = "forMainPage.png" class="Image">
+   </div>
+   <div class="GButton">
+   Login with your Parul University Google Email ONLY. Sign out <br>
+   of any other google account on your Chrome browser <br>
+   before clicking on the Sign in with Google button.
 <?php
    if($login_button == '')
    {
-	   header("Location:facultyPanel.php");
+	   header("Location:Welcome.php");
    }
    else
    {
