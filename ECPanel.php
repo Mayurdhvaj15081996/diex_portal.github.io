@@ -1,15 +1,16 @@
-<!DOCTYPE html>
 <html>
-<head>
-	<meta charset="utf-8">
-	<title>Faculty Panel</title>
-	<link rel="stylesheet" href="style.css">
-	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css">
-	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
-	<script type="text/javascript" src="welcome.js"></script>
-	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
-</head>
-<body id="body-pd">
+	<head>
+		<link href = "style.css" rel="stylesheet">
+	    <link href = "https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+	    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js">
+	    </script>
+	    <script type="text/javascript" src="welcome.js"></script>
+	    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+		<title>
+			Examination Cordinator Panel
+		</title>
+	</head>
+	<body id="body-pd">
     <header class="header" id="header">
         <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
         <div class="header_img"> <img src="https://i.imgur.com/hczKIze.jpg" alt=""> </div>
@@ -23,20 +24,6 @@
     </div>
     <!--Container Main start-->
     <div class="height-100 bg-light">
-        <h4>Welcome Admin Mayur</h4><br>
-        <br>
-    <div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Dropdown button
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="#">Action</a>
-    <a class="dropdown-item" href="#">Another action</a>
-    <a class="dropdown-item" href="#">Something else here</a>
-  </div>
-</div>  
+        <h4>Main Components</h4>
     </div>
-    <!--Container Main end-->
-
-</body>
 </html>

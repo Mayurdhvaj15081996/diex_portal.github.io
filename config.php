@@ -14,7 +14,7 @@ $google_client->setClientId('305658601639-p6k7fuhv4npnod01c4rek35da7nm8l8v.apps.
 $google_client->setClientSecret('aIwfxckj9f9vTEwFTDw6ogQO');
 
 //Set the OAuth 2.0 Redirect URI
-$google_client->setRedirectUri('http://localhost/phpproject/DIEx_Portal/index.php');
+$google_client->setRedirectUri('http://localhost/phpproject/DIEx_Portal/diex_portal.github.io/index.php');
 
 //
 $google_client->addScope('email');
