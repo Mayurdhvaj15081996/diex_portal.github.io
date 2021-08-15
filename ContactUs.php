@@ -57,7 +57,6 @@
                                         <input type="submit" value="Submit" class="btn btn-info btn-block rounded-0 py-2">
                                     </div>
                                 </div>
-
                             </div>
                         </form>
                 </div>

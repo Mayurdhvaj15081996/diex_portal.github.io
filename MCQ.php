@@ -12,7 +12,6 @@
 <body>
 	<br>
 		<h4>MCQ Exam Upload</h4>
-	<br>
 	<?php 
 		//Retrived Session Data
 		session_start();
@@ -20,39 +19,40 @@
 		$examType = $_SESSION['examType'];
 		$examTitle = $_SESSION['examTitle'];
 		$numberOfQuestions = $_SESSION['numberOfQuestions'];
+		$username = $_SESSION['user_email_address'];
 
 		//Printed the name of Exam, type of Exam and number of questions
 		echo "Exam Title :"." ".$examTitle."<br>";
 		echo "Exam Type :"." ".$examType."<br>";
 		echo "Number of Questions :"." ".$numberOfQuestions."<br><br>";
 
+		//Database Connection For Fetching The Data For ID..
+		$connection = mysqli_connect("localhost","root","","diex_portal") or die("Failed To Establish The Connection");
+
+		$result = mysqli_query($connection,"SELECT id FROM mcq_master");
+
 		$questionNumber = 1;
 
 		echo "Question Number :"." ".$questionNumber."<br>";		
 	?>
-		<form method="POST">
-			<input class="form-control form-control-sm" type="text" placeholder="Enter Your Question">
+		<form method="POST" action="insert_mcqs.php">
+			<input class="form-control form-control-sm" type="text" placeholder="Enter Your Question" name="question">
 			<br>
-			Answers :
+			Options :
 			<br>
 			<input type="text" name="option1" placeholder="Option 1" class="form-control form-control-sm"><br>
 			<input type="text" name="option2" placeholder="Option 2" class="form-control form-control-sm"><br>
 			<input type="text" name="option3" placeholder="Option 3" class="form-control form-control-sm"><br>
 			<input type="text" name="option4" placeholder="Option 4" class="form-control form-control-sm">
+			Answer :
+			<input type="text" name="answer" placeholder="Enter Answer Here.." class="form-control form-control-sm">
 				<br>
 					<div class="form-group form-check">
-			    		<input type="checkbox" class="form-check-input" id="exampleCheck1" name="submitExamConformation">
+			    		<input type="checkbox" class="form-check-input" id="exampleCheck1" name="submitQuestionConformation">
 			    		<label class="form-check-label" for="submitExam">Check me out for conformation</label>
 			  		</div>
   				<br>
-  						<input type="submit" name="submit_exam" class="btn btn-primary" value="Submit Question" />
-  			<?php
-				if(isset($_POST['submit_exam'])){
-					if(isset($_POST['submitExamConformation'])){
-						//Code of insert in database comes here....
-					}
-				}
-			?>
+  						<input type="submit" name="submitQuestion" class="btn btn-primary" value="Submit Question" />
 		</form>
 </body>
 </html>

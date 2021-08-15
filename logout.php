@@ -1,7 +1,5 @@
 <?php
 
-//logout.php
-
 include('config.php');
 
 //Reset OAuth access token

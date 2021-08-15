@@ -17,14 +17,14 @@
     <div class="l-navbar" id="nav-bar">
         <nav class="nav">
             <div> <a href="Welcome.php" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span class="nav_logo-name">Parul University</span> </a>
-                <div class="nav_list"> <a href="#" class="nav_link active"> <i class='bx bx-grid-alt nav_icon'></i> <span class="nav_name">Create Exam</span> </a>  </a> <a href="#" class="nav_link"> <i class='bx bx-message-square-detail nav_icon'></i> <span class="nav_name">Feedback</span> </a>  <a href="#" class="nav_link"> <i class='bx bx-bar-chart-alt-2 nav_icon'></i> <span class="nav_name">Result</span> </a> </div>
+                <div class="nav_list"> <a href="#" class="nav_link active"> <i class='bx bx-grid-alt nav_icon'></i> <span class="nav_name">Create Exam</span> </a>  </a> <a href="#" class="nav_link"> <i class='bx bx-message-square-detail nav_icon'></i> <span class="nav_name">Result</span> </a> </div>
             </div> <a href="logout.php" class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span class="nav_name">Sign Out</span> </a>
         </nav>
     </div>
     <!--Container Main start-->
     <div class="height-100 bg-light"><br>
         <br> <br>
-<form method="POST">
+<form method="POST" action="insert_exam.php">
   <div class="form-group">
     <label for="exampleInputEmail1">Enter Exam Title</label>
     <input type="text" class="form-control" name="examTitle" aria-describedby="emailHelp" placeholder="Enter exam title">
@@ -55,7 +55,7 @@
             $examType = $_POST['examType'];
             $numberOfQuestions = $_POST['numberOfQuestions'];
 
-             //Session for getting data of Exam
+             //Used Session for getting data of Exam
              $_SESSION['examType'] = $examType;
              $_SESSION['examTitle'] = $examTitle;
              $_SESSION['numberOfQuestions'] = $numberOfQuestions;

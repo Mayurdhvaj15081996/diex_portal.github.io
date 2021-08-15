@@ -20,7 +20,7 @@
         <nav class="nav">
             <div> <a href="#" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span class="nav_logo-name">Parul University</span> </a>
                 <div class="nav_list"> <a href="userinfo.php" class="nav_link"> <i class='bx bx-user nav_icon'></i> <span class="nav_name">User Info</span> </a> <a href="FacultyAuth.php" class="nav_link"> <i class='bx bx-user nav_icon'></i> <span class="nav_name">Faculty And EC Login</span> </a> <a href="#" class="nav_link"> <i class='bx bx-bookmark nav_icon'></i> <span class="nav_name">Exams</span> </a> <a href="ContactUs.php" class="nav_link"> <i class='bx bx-folder nav_icon'></i> <span class="nav_name">Contact Us</span> </a>  </a></div>
-            </div> <a href="logout.php" class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span class="nav_name">Sign Out</span> </a>
+            </div> <a href="logout.php" class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span class="nav_name">Sign out</span> </a>
         </nav>
     </div>
     <!--Container Main start-->
@@ -42,7 +42,7 @@
             <li>For Faculties</li>
             <ol>
                 <li>To create an exam you need to login with your given faculty credentials.</li>
-                <li>To log in with you faculty credentials go to <b>Faculty Login</b> sectoion.</li>
+                <li>To log in with you faculty credentials go to <b>Faculty Login</b> section.</li>
             </ol>
         </ul>
     </div>
