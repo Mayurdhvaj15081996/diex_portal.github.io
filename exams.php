@@ -36,18 +36,19 @@
                $connection = mysqli_connect("localhost","root","","diex_portal") or die("Failed To Establish The Connection");
 
                 $result = mysqli_query($connection,"SELECT * FROM mcq_master");
+                $row = mysqli_fetch_array($result);
                 $count = mysqli_num_rows($result);
-                if(count > 0){
+                if($count > 0){
             ?>
                 <div class="card" style="width: 18rem;">
                 <img src="pexels-photo-276452.jpeg" class="card-img-top" alt="...">
                 <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <h5 class="card-title"><?php echo $row['exam_title']; ?></h5>
+                <p class="card-text"><?php echo $row['exam_type']; ?></p>
+                <a href="giveExam.php" class="btn btn-primary">Enter Into Exam</a>
             <?php
             }else{
-                echo "No Exam is Available To Show";   
+                echo "<h4>"."No Exam is Available To Show"."</h4>";   
              }
         ?>
   </div>

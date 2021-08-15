@@ -57,6 +57,7 @@
 			  		</div>
   				<br>
   						<input type="submit" name="submitQuestion" class="btn btn-primary" value="Submit Question" />
+  						<a href="FacultyPanel.php" class="btn btn-primary">Go To Faculty Panel</a>
 		</form>
 </body>
 </html>
