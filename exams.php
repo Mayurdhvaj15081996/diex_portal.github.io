@@ -22,31 +22,35 @@
     <div class="l-navbar" id="nav-bar">
         <nav class="nav">
             <div> <a href="#" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span class="nav_logo-name">Parul University</span> </a>
-                <div class="nav_list"> <a href="userinfo.php" class="nav_link"> <i class='bx bx-user nav_icon'></i> <span class="nav_name">User Info</span> </a> <a href="FacultyAuth.php" class="nav_link"> <i class='bx bx-user nav_icon'></i> <span class="nav_name">Faculty And EC Login</span> </a> <a href="exams.php" class="nav_link"> <i class='bx bx-bookmark nav_icon'></i> <span class="nav_name">Exams</span> </a> <a href="ContactUs.php" class="nav_link"> <i class='bx bx-folder nav_icon'></i> <span class="nav_name">Contact Us</span> </a>  </a></div>
+                <div class="nav_list"> <a href="userinfo.php" class="nav_link"> <i class='bx bx-user nav_icon'></i> <span class="nav_name">User Info</span> </a> </i><a href="ContactUs.php" class="nav_link"> <i class='bx bx-folder nav_icon'></i> <span class="nav_name">Contact Us</span> </a>  </a></div>
             </div> <a href="logout.php" class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span class="nav_name">Sign out</span> </a>
         </nav>
     </div>
     <!--Container Main start-->
     <div class="height-100 bg-light">
-        <br><br>
-        <br> 
-        <h3>Welcome To The Department's Examination Portal</h3>      
-        <h4 style="color:red;">Instructions</h4>
-        <ul>
-            <li>For Students</li>
-            <ol>
-                <li>Please log In with your college's gmail ID.</li>
-                <li>Log in only you exam is scheduled.</li>
-                <li>If you are already logged in with your college's gmail id please go to <b>Exam</b> section to appear exam.</li>
-            </ol>
-        </ul>
         <br>
-         <ul>
-            <li>For Faculties</li>
-            <ol>
-                <li>To create an exam you need to login with your given faculty credentials.</li>
-                <li>To log in with you faculty credentials go to <b>Faculty Login</b> section.</li>
-            </ol>
-        </ul>
+        <br>
+        <br>
+        <br>
+            <?php
+               $connection = mysqli_connect("localhost","root","","diex_portal") or die("Failed To Establish The Connection");
+
+                $result = mysqli_query($connection,"SELECT * FROM mcq_master");
+                $count = mysqli_num_rows($result);
+                if(count > 0){
+            ?>
+                <div class="card" style="width: 18rem;">
+                <img src="pexels-photo-276452.jpeg" class="card-img-top" alt="...">
+                <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+            <?php
+            }else{
+                echo "No Exam is Available To Show";   
+             }
+        ?>
+  </div>
+</div>
     </div>
 </html>

@@ -15,6 +15,9 @@
 	<?php 
 		//Retrived Session Data
 		session_start();
+		if(!$_SESSION['user_email_address']){
+            header('Location:index.php');
+        } 
 
 		$examType = $_SESSION['examType'];
 		$examTitle = $_SESSION['examTitle'];
@@ -29,9 +32,10 @@
 		//Database Connection For Fetching The Data For ID..
 		$connection = mysqli_connect("localhost","root","","diex_portal") or die("Failed To Establish The Connection");
 
-		$result = mysqli_query($connection,"SELECT id FROM mcq_master");
+		$result = mysqli_query($connection,"SELECT * FROM mcq_master");
+		$count = mysqli_num_rows($result);
 
-		$questionNumber = 1;
+		$questionNumber = $count + 1;
 
 		echo "Question Number :"." ".$questionNumber."<br>";		
 	?>
@@ -45,7 +49,7 @@
 			<input type="text" name="option3" placeholder="Option 3" class="form-control form-control-sm"><br>
 			<input type="text" name="option4" placeholder="Option 4" class="form-control form-control-sm">
 			Answer :
-			<input type="text" name="answer" placeholder="Enter Answer Here.." class="form-control form-control-sm">
+			<input type="text" name="answer" placeholder="Enter Right Answer Here.." class="form-control form-control-sm">
 				<br>
 					<div class="form-group form-check">
 			    		<input type="checkbox" class="form-check-input" id="exampleCheck1" name="submitQuestionConformation">

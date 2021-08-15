@@ -52,7 +52,6 @@
        <?php
       }
   }
-
 ?>
     <!-- Remind Passowrd -->
     <div id="formFooter">

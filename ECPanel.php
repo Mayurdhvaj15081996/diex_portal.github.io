@@ -12,7 +12,10 @@
 	</head>
 	<body id="body-pd">
 		<?php
-			session_start(); 
+			session_start();
+			if(!$_SESSION['user_email_address']){
+            header('Location:index.php');
+        }  
 		?>
     <header class="header" id="header">
         <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>

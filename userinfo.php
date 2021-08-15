@@ -10,7 +10,10 @@
 </head>
 <body>
 	<?php 
-		session_start(); 
+		session_start();
+        if(!$_SESSION['user_email_address']){
+            header('Location:index.php');
+        }  
 	?>
 		<div class="page-content page-container" id="page-content">
     <div class="padding">
