@@ -30,7 +30,7 @@
     <div class="height-100 bg-light">
         <br><br>
         <br> 
-        <h3>Welcome To The Department's Examination Portal</h3>      
+        <h3>Welcome, <?php echo $_SESSION['user_first_name']." ".$_SESSION['user_last_name']; ?></h3>      
         <h4 style="color:red;">Instructions</h4>
         <ul>
             <li>For Students</li>
