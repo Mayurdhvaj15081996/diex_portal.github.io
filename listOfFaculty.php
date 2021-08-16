@@ -35,14 +35,11 @@
     	<br>
 
         <h4>
-        	<font color="red">To add any faculty click on</font> <b> Add Faculty </b> <br>
+        	<font color="red">List of Faculties</font>
         </h4>
         <ul>
         	<li>
-        		After click on add faculty you will be able to see a pop up to add faculty
-        	</li>
-        	<li>
-        		Enter email id of that faculty and provide unique password to her/him.
+        		Here is the list of faculties..
         	</li>    
     	</ul>
     </div>

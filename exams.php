@@ -21,7 +21,7 @@
     </header>
     <div class="l-navbar" id="nav-bar">
         <nav class="nav">
-            <div> <a href="#" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span class="nav_logo-name">Parul University</span> </a>
+            <div> <a href="index.php" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span class="nav_logo-name">Parul University</span> </a>
                 <div class="nav_list"> <a href="userinfo.php" class="nav_link"> <i class='bx bx-user nav_icon'></i> <span class="nav_name">User Info</span> </a> </i><a href="ContactUs.php" class="nav_link"> <i class='bx bx-folder nav_icon'></i> <span class="nav_name">Contact Us</span> </a>  </a></div>
             </div> <a href="logout.php" class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span class="nav_name">Sign out</span> </a>
         </nav>
