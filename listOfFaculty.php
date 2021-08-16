@@ -7,7 +7,7 @@
 	    <script type="text/javascript" src="welcome.js"></script>
 	    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
 		<title>
-			Examination Cordinator Panel
+			List of Faculties
 		</title>
 	</head>
 	<body id="body-pd">
@@ -33,14 +33,26 @@
     	<br>
     	<br>
     	<br>
-
         <h4>
         	<font color="red">List of Faculties</font>
         </h4>
-        <ul>
-        	<li>
-        		Here is the list of faculties..
-        	</li>    
-    	</ul>
     </div>
+    <?php
+    	$connection = mysqli_connect("localhost","root","","diex_portal") or die("Failed To Establish The Connection");
+
+		$result = mysqli_query($connection,"SELECT * FROM faculty_master");
+
+		while($data = mysqli_fetch_array($result)){
+		?>
+			<table>
+				<tr>
+					<td>
+						<?php echo $data['username']; ?>
+					</td>
+				</tr>
+			</table>
+		<?php
+		}
+    ?>
+</body>
 </html>
