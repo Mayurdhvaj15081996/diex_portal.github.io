@@ -5,10 +5,47 @@
 	    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js">
 	    </script>
 	    <script type="text/javascript" src="welcome.js"></script>
+	    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.0.7/css/boxicons.min.css">
 	    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
 		<title>
 			List of Faculties
 		</title>
+		<style type="text/css">
+			body{
+    background-color: #f7f7ff;
+    margin-top:20px;
+}
+.btn-white {
+    background-color: #fff;
+    border-color: #e7eaf3;
+}
+.radius-15 {
+    border-radius: 15px;
+}
+.contacts-social a {
+    font-size: 16px;
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+    background: #ffffff;
+    border: 1px solid #eeecec;
+    text-align: center;
+    border-radius: 50%;
+    color: #2b2a2a;
+}
+.bg-info {
+    background-color: #0dcaf0!important;
+}
+.bg-primary {
+    background-color: #008cff!important;
+}
+.bg-danger {
+    background-color: #fd3550!important;
+}
+.bg-warning {
+    background-color: #ffc107!important;
+}
+		</style>
 	</head>
 	<body id="body-pd">
 		<?php
@@ -34,7 +71,7 @@
     	<br>
     	<br>
         <h4>
-        	<font color="red">List of Faculties</font></h4>
+        	<font color="red">List of Faculties</font></h4> <br>
     <?php
     	$connection = mysqli_connect("localhost","root","","diex_portal") or die("Failed To Establish The Connection");
 
@@ -42,16 +79,12 @@
 
 		while($data = mysqli_fetch_array($result)){
 		?>
-			<table>
-				<tr>
-					<td>
-						<?php echo $data['username']; ?>
-					</td>
-					<td>
-						<a href="Delete.php" class="btn btn-primary">Delete</a>
-					</td>
-				</tr>
-			</table>
+			<div class="card" style="width: 18rem;">
+                <img src="<?php echo $_SESSION['user_image']; ?>" class="card-img-top" alt="...">
+                <div class="card-body">
+                <h5 class="card-title"><?php echo $data['username']; ?></h5>
+                <p class="card-text">Faculty</p> <br>
+              </div>
 		<?php
 		}
     ?>

@@ -32,14 +32,15 @@
             alert("Faculty Removed From Record");
         </script>
       <?php
-      }else{
+      header('Location:ECPanel.php');
+  }else{
       ?>
         <script>
           alert("Entered Faculty is Not Available");
         </script>
       <?php
-      }
     }
+  }
   ?>
 </body>
 </html>
