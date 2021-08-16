@@ -34,9 +34,7 @@
     	<br>
     	<br>
         <h4>
-        	<font color="red">List of Faculties</font>
-        </h4>
-    </div>
+        	<font color="red">List of Faculties</font></h4>
     <?php
     	$connection = mysqli_connect("localhost","root","","diex_portal") or die("Failed To Establish The Connection");
 
@@ -49,10 +47,14 @@
 					<td>
 						<?php echo $data['username']; ?>
 					</td>
+					<td>
+						<a href="Delete.php" class="btn btn-primary">Delete</a>
+					</td>
 				</tr>
 			</table>
 		<?php
 		}
     ?>
+    </div>
 </body>
 </html>
