@@ -35,10 +35,29 @@
             <?php
                $connection = mysqli_connect("localhost","root","","diex_portal") or die("Failed To Establish The Connection");
 
-                $result = mysqli_query($connection,"SELECT * FROM mcq_master");
-                $row = mysqli_fetch_array($result);
-                $count = mysqli_num_rows($result);
-                if($count > 0){
+                $resultofMCQMaster = mysqli_query($connection,"SELECT * FROM mcq_master");
+
+                $rowsofMCQMaster = mysqli_fetch_array($resultofMCQMaster);
+                $countofMCQMaster = mysqli_num_rows($resultofMCQMaster);
+
+                if($countofMCQMaster > 0){
+                ?>
+                    <div class="card" style="width: 18rem;">
+                    <img src="pexels-photo-276452.jpeg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                    <h5 class="card-title"><?php echo $rowsofMCQMaster['exam_title']; ?></h5>
+                    <p class="card-text"><?php echo $rowsofMCQMaster['exam_type']; ?></p>
+                    <a href="giveExam.php" class="btn btn-primary">Enter Into Exam</a>
+                <?php
+                }      
+        ?>
+  </div>
+</div>
+</div>
+</html>
+
+<?php
+   /* if($count > 0){
             ?>
                 <div class="card" style="width: 18rem;">
                 <img src="pexels-photo-276452.jpeg" class="card-img-top" alt="...">
@@ -49,9 +68,5 @@
             <?php
             }else{
                 echo "<h4>"."No Exam is Available To Show"."</h4>";   
-             }
-        ?>
-  </div>
-</div>
-    </div>
-</html>
+             }*/
+?>

@@ -54,7 +54,7 @@
         <br>
         <br>
         <form method="POST" action="FacultyPanel.php">
-          <input type="submit" name="goToHomePage" class="btn btn-primary" value="Go To Home Page" />
+          <input type="submit" name="goToHomePage" class="btn btn-primary" value="Go To Faculty Panel" />
         </form>
       </div>
     </body>

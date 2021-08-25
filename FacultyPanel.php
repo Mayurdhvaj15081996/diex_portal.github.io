@@ -21,7 +21,7 @@
     <div class="l-navbar" id="nav-bar">
         <nav class="nav">
             <div> <a href="Welcome.php" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span class="nav_logo-name">Parul University</span> </a>
-                <div class="nav_list"> <a href="#" class="nav_link active"> <i class='bx bx-grid-alt nav_icon'></i> <span class="nav_name">Create Exam</span> </a>  </a> <a href="#" class="nav_link"> <i class='bx bx-message-square-detail nav_icon'></i> <span class="nav_name">Result</span> </a> </div>
+                <div class="nav_list"> <a href="#" class="nav_link active"> <i class='bx bx-grid-alt nav_icon'></i> <span class="nav_name">Create Exam</span> </a> <a href="deleteExam.php" class="nav_link"> <i class='bx bx-grid-alt nav_icon'></i> <span class="nav_name">Delete Exam</span> </a> </a> <a href="askForUserName.php" class="nav_link"> <i class='bx bx-message-square-detail nav_icon'></i> <span class="nav_name">Result</span> </a> </div>
             </div> <a href="logout.php" class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span class="nav_name">Sign out</span> </a>
         </nav>
     </div>
@@ -53,7 +53,6 @@
   <input type="submit" name="createExam" class="btn btn-primary" value="Create an Exam">
 </form>
 <?php 
-    $connection = mysqli_connect("localhost","root","","diex_portal") or die("Failed To Establish The Connection");
 
     if(isset($_POST['createExam'])){
         if(isset($_POST['checkForConformation'])){
@@ -67,8 +66,6 @@
              $_SESSION['examType'] = $examType;
              $_SESSION['examTitle'] = $examTitle;
              $_SESSION['numberOfQuestions'] = $numberOfQuestions;
-
-             $query = mysqli_query($connection,"INSERT INTO exam_master(username, title_of_exam,    type_of_exam    , number_of_questions) VALUES ('$userName','$examTitle','$examType','$numberOfQuestions')");
 
             if($examType == "MCQ"){
                 header('Location:MCQ.php');

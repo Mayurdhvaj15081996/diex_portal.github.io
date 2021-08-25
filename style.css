@@ -25,7 +25,8 @@
   font-family: sans-serif;
 }
 .Image{
-  width: 750px;
+    padding-right:100px ;
+    width: 750px;
 }
 
 .profile_image{

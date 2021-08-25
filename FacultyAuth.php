@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>
-    Faculty Authentication
+    Faculty or EC Authentication
   </title>
   <link rel="stylesheet" type="text/css" href="styleForFacultyAuth.css">
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">

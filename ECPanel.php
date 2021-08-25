@@ -24,7 +24,7 @@
     <div class="l-navbar" id="nav-bar">
         <nav class="nav">
             <div> <a href="Welcome.php" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span class="nav_logo-name">Parul University</span> </a>
-                <div class="nav_list"> <a href="Welcome.php" class="nav_link active"> <i class='bx bx-grid-alt nav_icon'></i> <span class="nav_name">Dashboard</span> </a> <a href="listOfFaculty.php" class="nav_link"> <i class='bx bx-grid-alt nav_icon'></i> <span class="nav_name">Available Faculties</span> </a> <a href="addFaculty.php" class="nav_link"> <i class='bx bx-user nav_icon'></i> <span class="nav_name">Add Faculty</span> </a> <a href="RemoveFaculty.php" class="nav_link"> <i class='bx bx-user nav_icon'></i> <span class="nav_name">Remove Faculty</span> </a> </div>
+            <div class="nav_list"> <a href="#" class="nav_link active"> <i class='bx bx-grid-alt nav_icon'></i> <span class="nav_name">Dashboard</span> </a> <a href="listOfFaculty.php" class="nav_link"> <i class='bx bx-grid-alt nav_icon'></i> <span class="nav_name">Available Faculties</span> </a> <a href="addFaculty.php" class="nav_link"> <i class='bx bx-user nav_icon'></i> <span class="nav_name">Add Faculty</span> </a> <a href="RemoveFaculty.php" class="nav_link"> <i class='bx bx-user nav_icon'></i> <span class="nav_name">Remove Faculty</span> </a> </div>
             </div> <a href="logout.php" class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span class="nav_name">Sign out</span> </a>
         </nav>
     </div>
@@ -35,7 +35,7 @@
     	<br>
 
         <h4>
-        	<font color="red">To add any faculty click on</font> <b> Add Faculty </b> <br>
+        	<font color="red">Click on Add Faculty To Add Faculty</font> <b> Add Faculty </b> <br> <br>
         </h4>
         <ul>
         	<li>
