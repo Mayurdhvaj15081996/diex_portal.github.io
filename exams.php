@@ -36,9 +36,13 @@
                $connection = mysqli_connect("localhost","root","","diex_portal") or die("Failed To Establish The Connection");
 
                 $resultofMCQMaster = mysqli_query($connection,"SELECT * FROM mcq_master");
+                $resultofDescriptiveMaster = mysqli_query($connection,"SELECT * FROM descriptive_master");
 
                 $rowsofMCQMaster = mysqli_fetch_array($resultofMCQMaster);
+                $rowsofDescriptiveMaster = mysqli_fetch_array($resultofDescriptiveMaster);
+
                 $countofMCQMaster = mysqli_num_rows($resultofMCQMaster);
+                $countofDescriptiveMaster = mysqli_num_rows($resultofDescriptiveMaster);
 
                 if($countofMCQMaster > 0){
                 ?>
@@ -49,6 +53,18 @@
                     <p class="card-text"><?php echo $rowsofMCQMaster['exam_type']; ?></p>
                     <a href="giveExam.php" class="btn btn-primary">Enter Into Exam</a>
                 <?php
+                }
+                elseif ($countofDescriptiveMaster > 0) {
+                ?>
+                        <div class="card" style="width: 18rem;">
+                        <img src="pexels-photo-276452.jpeg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                        <h5 class="card-title"><?php echo $rowsofDescriptiveMaster['exam_title']; ?></h5>
+                        <p class="card-text"><?php echo $rowsofDescriptiveMaster['exam_type']; ?></p>
+                        <a href="giveDescriptiveExam.php" class="btn btn-primary">Enter Into Exam</a> 
+            <?php
+            }else{
+                    echo "No Exams Available.. Thanks For Visit..";
                 }      
         ?>
   </div>

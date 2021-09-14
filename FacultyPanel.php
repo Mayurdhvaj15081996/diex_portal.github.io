@@ -21,13 +21,15 @@
     <div class="l-navbar" id="nav-bar">
         <nav class="nav">
             <div> <a href="Welcome.php" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span class="nav_logo-name">Parul University</span> </a>
-                <div class="nav_list"> <a href="#" class="nav_link active"> <i class='bx bx-grid-alt nav_icon'></i> <span class="nav_name">Create Exam</span> </a> <a href="deleteExam.php" class="nav_link"> <i class='bx bx-grid-alt nav_icon'></i> <span class="nav_name">Delete Exam</span> </a> </a> <a href="askForUserName.php" class="nav_link"> <i class='bx bx-message-square-detail nav_icon'></i> <span class="nav_name">Result</span> </a> </div>
+                <div class="nav_list"> <a href="#" class="nav_link active"> <i class='bx bx-grid-alt nav_icon'></i> <span class="nav_name">Create Exam</span> </a> <a href="deleteExam.php" class="nav_link"> <i class='bx bx-grid-alt nav_icon'></i> <span class="nav_name">Delete Exam</span> </a> </a> <a href="deleteAnswers.php" class="nav_link"> <i class='bx bx-grid-alt nav_icon'></i> <span class="nav_name"> Delete Answers </span> </a> <a href="DescriptiveAnswerCheck.php" class="nav_link"> <i class='bx bx-message-square-detail nav_icon'></i> <span class="nav_name">Check Descriptive</span> </a> </div>
             </div> <a href="logout.php" class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span class="nav_name">Sign out</span> </a>
         </nav>
     </div>
     <!--Container Main start-->
     <div class="height-100 bg-light"><br>
         <br> <br>
+        <h2> Create Exam </h2>
+        <br>
 <form method="POST">
   <div class="form-group">
     <label for="exampleInputEmail1">Enter Exam Title</label>
@@ -60,12 +62,18 @@
             $examTitle = $_POST['examTitle'];
             $examType = $_POST['examType'];
             $numberOfQuestions = $_POST['numberOfQuestions'];
+            $date = date("Y/m/d");
+            $username = $_SESSION['user_email_address'];
 
              //Used Session for getting data of Exam
              $userName = $_SESSION['user_email_address'];
              $_SESSION['examType'] = $examType;
              $_SESSION['examTitle'] = $examTitle;
              $_SESSION['numberOfQuestions'] = $numberOfQuestions;
+
+             $connection = mysqli_connect("localhost","root","","diex_portal") or die("Failed To Establish The Connection");
+
+             $queryofExamMaster = mysqli_query($connection,"INSERT INTO exam_master(exam_title, exam_type, number_of_questions, date_of_examination, username) VALUES ('$examTitle', '$examType', '$numberOfQuestions', '$date', '$username')");
 
             if($examType == "MCQ"){
                 header('Location:MCQ.php');

@@ -22,7 +22,7 @@
     <div class="l-navbar" id="nav-bar">
         <nav class="nav">
             <div> <a href="#" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span class="nav_logo-name">Parul University</span> </a>
-                <div class="nav_list"> <a href="userinfo.php" class="nav_link"> <i class='bx bx-user nav_icon'></i> <span class="nav_name">User Info</span> </a> <a href="FacultyAuth.php" class="nav_link"> <i class='bx bx-user nav_icon'></i> <span class="nav_name">Faculty And EC Login</span> </a> <a href="exams.php" class="nav_link"> <i class='bx bx-bookmark nav_icon'></i> <span class="nav_name">Exams</span> </a> <a href="ContactUs.php" class="nav_link"> <i class='bx bx-folder nav_icon'></i> <span class="nav_name">Contact Us</span> </a>  </a></div>
+                <div class="nav_list"> <a href="userinfo.php" class="nav_link"> <i class='bx bx-user nav_icon'></i> <span class="nav_name">User Info</span> </a> <a href="FacultyAuth.php" class="nav_link"> <i class='bx bx-user nav_icon'></i> <span class="nav_name">Faculty And EC Login</span> </a> <a href="exams.php" class="nav_link"> <i class='bx bx-bookmark nav_icon'></i> <span class="nav_name">Exams</span> </a> <a href="ContactUs.php" class="nav_link"> <i class='bx bx-folder nav_icon'></i> <span class="nav_name">Contact Us</span> </a>  </a> </a> <a href="askForUserName.php" class="nav_link"> <i class='bx bx-message-square-detail nav_icon'></i> <span class="nav_name">Result</span> </a> </div>
             </div> <a href="logout.php" class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span class="nav_name">Sign out</span> </a>
         </nav>
     </div>
@@ -30,7 +30,8 @@
     <div class="height-100 bg-light">
         <br><br>
         <br> 
-        <h3>Welcome, <?php echo $_SESSION['user_first_name']." ".$_SESSION['user_last_name']; ?></h3>      
+        <h3>Welcome, <?php echo $_SESSION['user_first_name']." ".$_SESSION['user_last_name']; ?></h3>
+        <br>      
         <h4 style="color:red;">Instructions</h4>
         <ul>
             <li>For Students</li>
@@ -38,6 +39,7 @@
                 <li>Please log In with your college's gmail ID.</li>
                 <li>Log in only you exam is scheduled.</li>
                 <li>If you are already logged in with your college's gmail id please go to <b>Exam</b> section to appear exam.</li>
+                <li>Link will be available when result is declared..</li>
             </ol>
         </ul>
         <br>

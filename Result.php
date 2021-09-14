@@ -21,7 +21,7 @@
     </header>
     <div class="l-navbar" id="nav-bar">
         <nav class="nav">
-            <div> <a href="#" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span class="nav_logo-name">Parul University</span> </a>
+            <div> <a href="Welcome.php" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span class="nav_logo-name">Parul University</span> </a>
             </div> <a href="logout.php" class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span class="nav_name">Sign out</span> </a>
         </nav>
     </div>
@@ -32,6 +32,7 @@
         <h3>Welcome, <?php 
         $userNameofGmail = $_SESSION['user_first_name'];
         echo $userNameofGmail." ".$_SESSION['user_last_name']; ?></h3>
+        <br>
         <br>
         <?php
             if(isset($_POST['enterUsername'])){
@@ -53,6 +54,44 @@
                     }
                 }       
             }
-        ?> 
+                echo "<h5> Your Marks : ".$result."</h5>";
+
+                if($result == 0){
+                    echo "I think you have not attempted exam yet if already attempted click on the below button.";
+                    ?>
+                    <form method="POST" action="ContactUS.php" id="ContactForm">
+                        <br>
+                        <br>
+                         <input type="submit" name="goToContactUs" class="btn btn-primary" value="Contact Us" />
+                    </form>
+        <?php            
+            }
+        ?>
+
+        <b>Note :</b>
+            Please Click On The <b style="color: red"> Submit Marks </b> Button To Submit/Save Your Record/Marks Of Exam.
+        <br> <br>
+         <form method="POST" id="resultSubmit" action="submitMarks.php">
+        <div class="form-group">
+            <b> Username : </b>
+            <input class="form-control" type="text" value="<?php echo $_SESSION['user_email_address']; ?>" aria-label="Disabled input example" disabled readonly>
+            <input class="form-control" type="hidden" value="<?php echo $_SESSION['user_email_address']; ?>" name="usernameForSubmitMarks">
+        </div> <br>
+        <div class="form-group">
+           <b> Marks: </b>
+            <input class="form-control" type="text" value="<?php echo $result; ?>" aria-label="Disabled input example" disabled readonly>
+            <input class="form-control" type="hidden" value="<?php echo $result; ?>" aria-label="Disabled input example" name="marksForSubmit">
+        </div> <br>
+         <div class="form-group">
+           <b> Enter Semester: </b>
+            <input class="form-control" type="text" aria-label="Disabled input example" placeholder="Enter Your Current Semester" name="semester">
+        </div> <br>
+        <div class="form-group">
+           <b> Enter Course: </b>
+            <input class="form-control" type="text" aria-label="Disabled input example" placeholder="Enter Your Current Course" name="course">
+        </div> <br>
+        <input type="submit" name="submitMarks" class="btn btn-primary" value="Submit Marks" />
+    </form> 
     </div>
+</body>
 </html>

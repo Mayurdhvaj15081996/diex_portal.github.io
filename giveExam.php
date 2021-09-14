@@ -21,12 +21,27 @@
 		 			header('Location:index.php');
 		 		}
 		 		$connection = mysqli_connect("localhost","root","","diex_portal") or die("Failed To Establish The Connection");
-                $resultofMCQMaster = mysqli_query($connection,"SELECT * FROM mcq_master");
-                $countofMCQMaster = mysqli_num_rows($resultofMCQMaster);
-                
+             
+                $resultofAnswerMaster = mysqli_query($connection,"SELECT * FROM answer_master");
+
+                //Here i fetch the data from answer_master to get the questions one by one	
+                //Because initially answer_master is 0 and below i define variable $questionNumber with count of answer_master + 1.
+                //After every answer submission question number will be incremented by 1.
+
+                $countofAnswerMaster = mysqli_num_rows($resultofAnswerMaster);
+
+                $questionNumber = $countofAnswerMaster + 1;
+
+                $resultofMCQMaster = mysqli_query($connection,"SELECT * FROM mcq_master WHERE id='$questionNumber'");
+
+                $resultofMCQMasterAll = mysqli_query($connection,"SELECT * FROM mcq_master");
+                $countofMCQMaster = mysqli_num_rows($resultofMCQMasterAll);
+
                 if($countofMCQMaster > 0){
-                while($dataofMCQMaster = mysqli_fetch_array($resultofMCQMaster)){         
+                $dataofMCQMaster = mysqli_fetch_array($resultofMCQMaster);
+                //while($dataofMCQMaster = mysqli_fetch_array($resultofMCQMaster)){         
                 	?>
+                		<h4> Subject : <?php echo $dataofMCQMaster['exam_title']; ?> </h4> <br>
                 		<h4><?php echo $dataofMCQMaster['id']."."." ".$dataofMCQMaster['question']; ?> </h4> <br>
                 		<form method="POST" action="insert_answers.php">
                 			<div class="form-check">
@@ -54,10 +69,12 @@
 							    <?php echo $dataofMCQMaster['option_4']; ?>
 							  </label>
 							</div> <br>
-							<input type="submit" name="submitMCQAnswer" class="btn btn-primary" value="Submit"> <br> <br>
+							<input type="Submit" name="submitMCQAnswer" class="btn btn-primary" value="Submit"> <br> <br>
                 	<?php
                 }
-            }
+                if($countofMCQMaster == $countofAnswerMaster){
+                    header('Location:examSubmissionSuccess.php');
+                }	
 	?>	
-</form> 
+</form>
 </html>

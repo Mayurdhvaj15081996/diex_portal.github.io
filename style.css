@@ -148,11 +148,11 @@ body {
     position: relative;
     color: var(--first-color-light);
     margin-bottom: 1.5rem;
-    transition: .3s
+    transition: .3s;
 }
 
 .nav_link:hover {
-    color: var(--white-color)
+    color: var(--white-color);
 }
 
 .nav_icon {

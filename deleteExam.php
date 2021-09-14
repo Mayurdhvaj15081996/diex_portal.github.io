@@ -31,10 +31,12 @@
 
    if($examType == "MCQ"){
       mysqli_query($connection,"TRUNCATE TABLE mcq_master");
+      header('Location:FacultyPanel.php');
     } 
 
     if($examType == "Descriptive"){
       mysqli_query($connection,"TRUNCATE TABLE descriptive_master");
+      header('Location:FacultyPanel.php');
     }
   }
 ?>

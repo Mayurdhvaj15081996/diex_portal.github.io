@@ -72,6 +72,8 @@
             $message = $_POST['enteredMessage'];
 
             mysqli_query($connection,"INSERT INTO contact_us(username,email,message) VALUES ('$enteredName', '$enteredEmail', '$message')");
+
+            header('Location:thankYou.php');
         }
     ?>
     </body>
