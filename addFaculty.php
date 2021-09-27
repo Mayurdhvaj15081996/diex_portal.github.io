@@ -14,7 +14,7 @@
     <br>
     <form method="POST" action="insert_faculty.php">
       <input type="text" id="login" class="fadeIn second" name="username" placeholder="Provide Username" required>
-      <input type="text" id="password" class="fadeIn third" name="password" placeholder="Provide Password" required>
+      <input type="password" id="password" class="fadeIn third" name="password" placeholder="Provide Password" required>
       <input type="submit" class="fadeIn fourth" value="Add Faculty" name="add_faculty">
     </form>
   </div>

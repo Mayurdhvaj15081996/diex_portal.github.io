@@ -50,7 +50,7 @@
         <i class="checkmark">✓</i>
       </div>
         <h1>Success</h1> 
-        <p>Your Created Exam Was Submitted Successfully.<br/> Thank You!</p>
+        <p>Your Created Exam Submitted Successfully.<br/> Thank You!</p>
         <br>
         <br>
         <form method="POST" action="FacultyPanel.php">

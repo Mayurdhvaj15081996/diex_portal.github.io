@@ -9,10 +9,12 @@
 	<script type="text/javascript" src="welcome.js"></script>
 	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
 </head>
-<body id="body-pd"> <?php session_start();
+<body id="body-pd"> 
+                  <?php 
+                        session_start();
                         if(!$_SESSION['user_email_address']){
                         header('Location:index.php');
-        } 
+                      } 
                      ?>
     <header class="header" id="header">
         <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
@@ -73,6 +75,27 @@
 
              $connection = mysqli_connect("localhost","root","","diex_portal") or die("Failed To Establish The Connection");
 
+<<<<<<< Updated upstream
+=======
+
+             //This logic is for getting count of mcq_master and descriptive_master to check any exam is available or not.. 
+             $queryForGettingDataFromMCQMaster = mysqli_query($connection,"SELECT * FROM mcq_master");
+
+             $countOfMCQMaster = mysqli_num_rows($queryForGettingDataFromMCQMaster);
+
+             $queryForGettingDataFromDescriptiveMaster = mysqli_query($connection,"SELECT * FROM descriptive_master");
+
+             $countOfDescriptiveMaster = mysqli_num_rows($queryForGettingDataFromDescriptiveMaster);
+
+              if($countOfMCQMaster OR $countOfDescriptiveMaster > 0){
+              ?>
+                <script type="text/javascript">
+                  alert("Any Exam Is Still Ongoing Please Wait Until its Finished");
+                </script>
+              <?php
+              }else{
+
+>>>>>>> Stashed changes
              $queryofExamMaster = mysqli_query($connection,"INSERT INTO exam_master(exam_title, exam_type, number_of_questions, date_of_examination, username) VALUES ('$examTitle', '$examType', '$numberOfQuestions', '$date', '$username')");
 
             if($examType == "MCQ"){
@@ -80,15 +103,14 @@
             }
             if($examType == "Descriptive"){
                 header('Location:Descriptive.php');
-            }else{
-
-            ?>
-            <script>
-                alert("Please Fill All The Details And Check For Conformation");
-            </script>
-            <?php
+            }
         }
-    }
+      }
+      ?>
+        <script>
+            alert("Please Fill All The Details And Check For Conformation");
+        </script>
+    <?php
     }
 ?>
 </body>

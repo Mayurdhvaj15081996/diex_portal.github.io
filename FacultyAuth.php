@@ -11,14 +11,14 @@
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
-<div class="wrapper fadeInDown">
+<div class="wrapper fadeInDown p-3">
   <div id="formContent">
     <br>
 
     <!-- Login Form -->
-    <form method="POST">
+    <form method="POST" class="">
       <input type="text" id="login" class="fadeIn second" name="username" placeholder="Enter Your Username">
-      <input type="text" id="password" class="fadeIn third" name="password" placeholder="Enter Your Password">
+      <input type="password" id="password" class="fadeIn third" name="password" placeholder="Enter Your Password">
       <input type="submit" class="fadeIn fourth" value="Log In" name="login">
     </form>
 <?php

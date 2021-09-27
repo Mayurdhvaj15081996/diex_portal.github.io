@@ -73,9 +73,10 @@ if(!isset($_SESSION['access_token']))
       <img src = "forMainPage.png" class="Image">
    </div>
    <div class="GButton">
-   Login with your Parul University Google Email ONLY. Sign out <br>
+    <font style="color: grey;padding-left: 110px;font-family: system-ui"> Login to Awesomeness !!</font> <br> <br>
+   <font style="font-family: system-ui">Login with your Parul University Google Email ONLY. Sign out <br>
    of any other google account on your Chrome browser <br>
-   before clicking on the Sign in with Google button.
+   before clicking on the <font style="font-weight: bold; font-style: italic;">Sign in with Google </font> button.</font>
 <?php
    if($login_button == '')
    {

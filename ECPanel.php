@@ -1,4 +1,4 @@
-<html>
+e<html>
 	<head>
 		<link href = "style.css" rel="stylesheet">
 	    <link href = "https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -12,10 +12,18 @@
 	</head>
 	<body id="body-pd">
 		<?php
-			session_start();
+        if(isset($_GET["alt"]) && $_GET["alt"] == "T"){
+            ?>
+            <script type="text/javascript">
+                    alert(" Entered User Is Available");
+                </script>
+        <?php
+        header('Location:ECPanel.php');
+    }
+    		session_start();
 			if(!$_SESSION['user_email_address']){
             header('Location:index.php');
-        }  
+        }
 		?>
     <header class="header" id="header">
         <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
@@ -35,7 +43,7 @@
     	<br>
 
         <h4>
-        	<font color="red">Click on Add Faculty To Add Faculty</font> <b> Add Faculty </b> <br> <br>
+        	<font color="red">Click on Add Faculty To </font> <b> Add Faculty </b> <br> <br>
         </h4>
         <ul>
         	<li>
